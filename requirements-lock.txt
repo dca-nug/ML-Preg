@@ -1,0 +1,49 @@
+# =============================================================================
+#  PINNED ENVIRONMENT OF THE REPORTED RUN
+# =============================================================================
+#
+#      pip install -r requirements-lock.txt
+#
+#  Transcribed from output_ML02/environment_ML02.txt, generated 2026-08-13.
+#  Machine: Windows 10 (build 26200), Intel 12 logical cores, 15.8 GB RAM.
+#  Python 3.11.4.
+#
+#  Use this file to reproduce the reported numbers. Use requirements.txt to run
+#  the code on a current stack, where the third decimal of an AUC may differ.
+#
+# -----------------------------------------------------------------------------
+numpy==1.26.4
+pandas==2.3.0
+scipy==1.16.1
+scikit-learn==1.7.1
+xgboost==3.0.4
+lightgbm==4.6.0
+catboost==1.2.10
+imbalanced-learn==0.14.0
+shap==0.48.0
+statsmodels==0.14.5
+matplotlib==3.10.6
+
+# -----------------------------------------------------------------------------
+#  NOT RECORDED BY environment_ML02.txt
+# -----------------------------------------------------------------------------
+#  `ml_utils.environment_report` iterates a fixed list of modules that omits
+#  three packages the pipeline depends on. Their versions in the reported run
+#  are therefore not on record, and the four lines below are floors rather than
+#  transcriptions.
+#
+#      openpyxl   every .xlsx in the repository is written through it
+#      joblib     Parallel/delayed in the ML09 paired bootstrap
+#      psutil     present in the reported run, since environment_ML02.txt
+#                 contains a `total memory` line, which is only printed when
+#                 psutil imports
+#      threadpoolctl  pulled in by scikit-learn; XGBoost thread count affects
+#                 floating-point reduction order
+#
+#  To close this gap for the archived release, add these names to the module
+#  list in `ml_utils.environment_report` and rerun any one script. Nothing is
+#  refitted by that: the report is written before training starts.
+#
+openpyxl>=3.1
+joblib>=1.3
+psutil>=5.9

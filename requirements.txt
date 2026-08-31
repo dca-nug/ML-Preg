@@ -1,0 +1,68 @@
+# =============================================================================
+#  RUNTIME DEPENDENCIES
+# =============================================================================
+#
+#      pip install -r requirements.txt
+#
+#  These are floors, not the versions the reported results were produced with.
+#  For those, see requirements-lock.txt.
+#
+#  WHY THE FLOORS SIT WHERE THEY DO
+#  --------------------------------
+#  The APIs this code calls are old. `spearmanr(...).statistic` needs scipy
+#  1.9, `CalibratedClassifierCV.estimator` needs scikit-learn 1.2, and dropping
+#  `use_label_encoder` needs xgboost 2.0. Those floors are not the binding
+#  constraint.
+#
+#  imbalanced-learn 0.14 is. Its own metadata requires numpy>=1.25.2,
+#  scipy>=1.11.4, scikit-learn>=1.4.2, and Python>=3.10, so an environment
+#  built to the API floors above would not resolve. The floors below are set by
+#  imbalanced-learn where it binds and by the API elsewhere.
+#
+#  Python 3.10 or later. The reported run used 3.11.4.
+#
+# -----------------------------------------------------------------------------
+#  Core numerical stack
+# -----------------------------------------------------------------------------
+numpy>=1.25.2            # floor set by imbalanced-learn 0.14
+pandas>=2.0              # pd.api.types.is_numeric_dtype, ExcelWriter as context manager
+scipy>=1.11.4            # floor set by imbalanced-learn 0.14
+                         # (the API needs only 1.9, for spearmanr(...).statistic)
+
+# -----------------------------------------------------------------------------
+#  Learners
+# -----------------------------------------------------------------------------
+scikit-learn>=1.4.2      # floor set by imbalanced-learn 0.14
+                         # (the API needs only 1.2, CalibratedClassifierCV.estimator)
+xgboost>=2.0             # use_label_encoder removed; ML02/ML04 no longer pass it
+lightgbm>=4.0            # ML03, imported lazily
+catboost>=1.2            # ML03, imported lazily
+imbalanced-learn>=0.14   # imblearn.pipeline.Pipeline (ML04, ml_core._oof_estimator)
+
+# -----------------------------------------------------------------------------
+#  Explanation, inference, plotting
+# -----------------------------------------------------------------------------
+shap>=0.44               # TreeExplainer on the unwrapped booster (ML02)
+statsmodels>=0.14        # calibration slope by IRLS (ML09)
+matplotlib>=3.7
+joblib>=1.3              # Parallel/delayed in the paired bootstrap (ML09)
+
+# -----------------------------------------------------------------------------
+#  I/O
+# -----------------------------------------------------------------------------
+openpyxl>=3.1            # every .xlsx writer in the repository names this engine
+
+# -----------------------------------------------------------------------------
+#  Optional
+# -----------------------------------------------------------------------------
+#  Without psutil the peak-memory column of every benchmark_*.csv is blank and
+#  a note is printed. Nothing else changes.
+psutil>=5.9
+
+# -----------------------------------------------------------------------------
+#  NOT bounded above, deliberately
+# -----------------------------------------------------------------------------
+#  imbalanced-learn 0.14 permits numpy<3, so numpy 2.x is not excluded by
+#  metadata. The reported run used numpy 1.26.4, and numpy 2.x has not been
+#  tested against these shap and xgboost builds. If a fresh environment fails
+#  at `import shap`, install numpy<2 first.

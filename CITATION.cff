@@ -1,0 +1,98 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the archived release and the article it supports."
+title: >-
+  Incremental value of antenatal diagnoses for outcome-specific prediction of
+  pregnancy complications: analysis code
+abstract: >-
+  Analysis code for time-stratified gradient-boosted models estimating the
+  incremental predictive value of diagnoses recorded during pregnancy over
+  pre-pregnancy history alone, for six pregnancy complications. Models are
+  fitted on pregnancy episodes reconstructed from Indonesian national health
+  insurance claims and validated without refitting on the Taipei Medical
+  University Clinical Research Database.
+
+type: software
+license: MIT
+repository-code: "https://github.com/dca-nug/ML-Preg"
+
+# TODO: version and date are set at release time and must match the GitHub tag.
+version: 1.0.0
+date-released: "2026-01-01"
+
+# TODO: concept DOI from Zenodo, available after the first release.
+# The concept DOI resolves to the latest version. A version DOI pins one release.
+doi: 10.5281/zenodo.XXXXXXX
+
+authors:
+  - given-names: "Daniel C. A."
+    family-names: "Nugroho"
+    affiliation: >-
+      Graduate Institute of Biomedical Informatics, Taipei Medical University,
+      Taipei, Taiwan; Faculty of Medicine, Universitas Kristen Duta Wacana,
+      Yogyakarta, Indonesia
+    # TODO: orcid: "https://orcid.org/0000-0000-0000-0000"
+  - given-names: "Mohammad Solihuddin"
+    family-names: "Muhtar"
+    affiliation: >-
+      International Ph.D. Program in Biotech and Healthcare Management, College
+      of Management, Taipei Medical University, Taipei, Taiwan
+  - given-names: "Ida A."
+    family-names: "Triastuti"
+    affiliation: >-
+      Faculty of Health and Medical Sciences, University of Western Australia,
+      Perth, Australia
+  - given-names: "Jason C."
+    family-names: "Hsu"
+    affiliation: >-
+      International Ph.D. Program in Biotech and Healthcare Management, College
+      of Management, Taipei Medical University, Taipei, Taiwan; Clinical Data
+      Center, Office of Data Science, Taipei Medical University, Taipei, Taiwan;
+      Clinical Big Data Research Center, Taipei Medical University Hospital,
+      Taipei, Taiwan; Research Center of Data Science on Health Care Industry,
+      College of Management, Taipei Medical University, Taipei, Taiwan
+  - given-names: "Yuan-Chii Gladys"
+    family-names: "Lee"
+    affiliation: >-
+      Graduate Institute of Biomedical Informatics, Taipei Medical University,
+      Taipei, Taiwan
+  - given-names: "Emily Chia-Yu"
+    family-names: "Su"
+    affiliation: >-
+      Graduate Institute of Biomedical Informatics, Taipei Medical University,
+      Taipei, Taiwan; Clinical Big Data Research Center, Taipei Medical
+      University Hospital, Taipei, Taiwan; Institute of Biomedical Informatics,
+      College of Medicine, National Yang Ming Chiao Tung University, Taipei,
+      Taiwan
+
+# Corresponding authors, marked # in the manuscript byline.
+contact:
+  - given-names: "Yuan-Chii Gladys"
+    family-names: "Lee"
+    affiliation: "Taipei Medical University, Taipei, Taiwan"
+  - given-names: "Emily Chia-Yu"
+    family-names: "Su"
+    affiliation: "Taipei Medical University, Taipei, Taiwan"
+
+keywords:
+  - clinical prediction model
+  - pregnancy complications
+  - administrative claims data
+  - external validation
+  - gradient boosting
+  - perinatal epidemiology
+  - Indonesia
+
+# TODO: uncomment and complete once the article is accepted. Tools that read
+# CITATION.cff will then cite the article rather than the software by default.
+#
+# preferred-citation:
+#   type: article
+#   title: >-
+#     Incremental Value of Antenatal Diagnoses for Outcome-Specific Prediction
+#     of Pregnancy Complications: A Nationwide Claims Analysis
+#   authors:
+#     - given-names: "Daniel C. A."
+#       family-names: "Nugroho"
+#   journal: "BMC Medical Informatics and Decision Making"
+#   year: 2026
+#   doi: "TODO"
