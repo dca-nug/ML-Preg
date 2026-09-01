@@ -208,15 +208,8 @@ If you use this code, cite the archived release and the article.
 > Incremental Value of Antenatal Diagnoses for Outcome-Specific Prediction of
 > Pregnancy Complications: A Nationwide Claims Analysis.
 
-```
-TODO — Zenodo DOI
-TODO — article citation once available
-```
-
 Machine-readable metadata is in `CITATION.cff`.
 
-Archiving the code on Zenodo makes it retrievable. It does not substitute for
-citing the methods.
 
 ---
 
